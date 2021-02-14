@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,700"
+	rel="stylesheet">
+<title>Registrarse</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+body {
+	background: #eee;
+}
+
+.wrapper {
+	margin: 80px;
+}
+
+.form-signin {
+	max-width: 380px;
+	margin: 0 auto;
+	background-color: #fff;
+	padding: 15px 40px 50px;
+	border: 1px solid #e5e5e5;
+	border-radius: 10px;
+}
+
+.form-signin .forms-signin-heading {
+	margin-bottom: 30;
+}
+
+.form-signin input[type="text"], .form-signin input[type="password"] {
+	margin-bottom: 20px;
+}
+
+.form-signin .form-control {
+	padding: 10px;
+
+}
+h2{
+color: gray;
+text-align: center;
+}
+
+</style>
+</head>
+<body>
+	<div class="signup-form">
+		<form action="/examples/actions/confirmation.php" method="post">
+			<h2 >Reservaciones</h2>
+			<div class="form-group">
+				
+				<input type="text" class="form-control" name="numero"
+					placeholder="Ingrese el numero de Habitacion deseada disponible" required="required">
+			</div>
+			<div class="form-group">
+				
+				<input type="text" class="form-control" name="nombreyapellido"
+					placeholder="Ingrese nombre y apellido del huesped" required="required">
+			</div>
+
+			<div class="form-group">
+				<input type="text" class="form-control" name="desayuno"
+					placeholder="Desea desayuno? Si/No" required="required">
+			</div>
+			<div class="form-group">
+				<h3>Fecha de Inicio</h3>
+				<input type="date" id="start" name="trip-start" value="2021-02-21" min="2018-01-01"  max="2018-12-31"  required="required">
+			</div>
+			<div class="form-group">
+				<h3>Fecha de Salida</h3>
+				<input type="date" id="start" name="trip-start" value="2021-02-21" min="2018-01-01"  max="2018-12-31"  required="required">
+			</div>
+			<div class="form-group">
+					<button type="submit" class="btn btn-lg btn-primary btn-block">Reservar Habitacion</button>
+			</div>
+		</form>
+	
+	</div>
+</body>
+</html>
