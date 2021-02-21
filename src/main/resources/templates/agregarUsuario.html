@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="ISO-8859-1">
-<title>Register</title>
+<title>Agregar Usuario</title>
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
 	integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
@@ -20,42 +20,41 @@
 	crossorigin="anonymous"></script>
 </head>
 <body>
-	<div class="signup-form">
-		<form>
-			<h2>Register</h2>
-			<div class="form-group">
-				<input type="text" class="form-control" name="nombre"
-					placeholder="Nombre" required="required">
+<div class = "container">
+	<form>
+	<h2>Nuevo Usuario</h2>
+	  		<div>
+				<input type="text" class="form-control" name="Nombre"
+					placeholder="Nombre	" required="required">
 			</div>
-			<div class="form-group">
-				<input type="text" class="form-control" name="apellido"
+			<div>
+				<input type="text" class="form-control" name="Apellido"
 					placeholder="Apellido" required="required">
 			</div>
-
-			<div class="form-group">
-				<input type="email" class="form-control" name="email"
-					placeholder="Email" required="required">
+			<div>
+				<input type="text" class="form-control" name="dni"
+					placeholder="DNI" required="required">
 			</div>
-			<div class="form-group">
+			<div>
 				<input type="text" class="form-control" name="usuario"
-					placeholder="NombreUsuario" required="required">
+					placeholder="Nombre de Usuario" required="required">
 			</div>
-			<div class="form-group">
-				<input type="password" class="form-control" name="password"
+			<div>
+				<input type="password" class="form-control" name="Contraseña"
 					placeholder="Contraseña" required="required">
 			</div>
-	
-			<div class="form-group">
-				<input type="text" class="form-control" name="dni" placeholder="DNI"
-					required="required">
+			<div>
+				<input type="text" class="form-control" name="dni"
+					placeholder="DNI" required="required">
 			</div>
 			<div class="form-group">
-					<button type="submit" class="btn btn-lg btn-primary btn-block">Registrarse</button>
-			</div>
-		</form>
-		<div class="text-center">
-			Already have an account? <a href="login">Logueate</a>
-		</div>
-	</div>
+						<label for="tipo">Tipo</label> <br> <select>
+						<option>Cliente</option>
+						<option>Administrador</option>
+						</select>
+					</div>
+			<button type="submit" class="btn btn-primary">Guardar Usuario</button>
+</form>
+</div>
 </body>
 </html>

@@ -9,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import org.hibernate.annotations.GenericGenerator;
+import org.springframework.stereotype.Component;
+@Component
 @Entity
 public class Usuario implements Serializable{
 	/**
@@ -29,7 +31,9 @@ public class Usuario implements Serializable{
 	String nombre;
 	@Column
 	String apellido;
-	
+	public Usuario() {
+		
+	}
 	public Usuario(Long id, String nombreUsuario, String contraseña, int dni, String nombre, String apellido) {
 		super();
 		this.id = id;
