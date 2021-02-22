@@ -35,5 +35,9 @@ public class IUsuarioServiceImp implements IUsuarioService {
 		// TODO Auto-generated method stub
 		iUsuarioDAO.deleteById(id);
 	}
-
+	@Override
+	public Usuario modUsuario(Usuario usuario) {
+		// TODO Auto-generated method stub
+		return iUsuarioDAO.save(usuario);
+	}
 }

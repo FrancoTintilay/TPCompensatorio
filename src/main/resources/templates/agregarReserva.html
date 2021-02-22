@@ -3,54 +3,33 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Agregar reserva</title>
-<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-	integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
-	crossorigin="anonymous">
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-	integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-	crossorigin="anonymous"></script>
-<script
-	src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-	integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-	crossorigin="anonymous"></script>
-<script
-	src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-	integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-	crossorigin="anonymous"></script>
 </head>
 <body>
 	<div class="signup-form">
-		<form action="/examples/actions/confirmation.php" method="post">
-			<h2 >Reservaciones</h2>
+		<form th:object="${/guardarreserva"}" th:action="${reserva}">
+			<h2>Reservaciones</h2>
 			<div class="form-group">
-				
-				<input type="text" class="form-control" name="numero"
-					placeholder="Ingrese el numero de Habitacion deseada disponible" required="required">
-			</div>
-			<div class="form-group">
-				
-				<input type="text" class="form-control" name="nombreyapellido"
-					placeholder="Ingrese nombre y apellido del huesped" required="required">
-			</div>
 
+				<div class="form-group">
+					<label>Numero de Habitacion</label>
+					<input type="text" class="form-control" placeholder="Habitacion desada" th:field="*{habitacion.numhab}">
+				</div>
+			</div>
 			<div class="form-group">
+				<label>Desayuno</label>
 				<input type="text" class="form-control" name="desayuno"
-					placeholder="Desea desayuno? Si/No" required="required">
+					placeholder="Desea desayuno? Si/No" required="required" th:field="*{desayuno}">
 			</div>
 			<div class="form-group">
-				<h3>Fecha de Inicio</h3>
-				<input type="date" id="start" name="trip-start" value="2021-02-21" min="2018-01-01"  max="2018-12-31"  required="required">
+				<label for="">Fecha</label><br>
+				<input type="date" class="form-control" name="fecha" required="required" th:field="*{fecha}">
 			</div>
 			<div class="form-group">
-				<h3>Fecha de Salida</h3>
-				<input type="date" id="start" name="trip-start" value="2021-02-21" min="2018-01-01"  max="2018-12-31"  required="required">
-			</div>
-			<div class="form-group">
-					<button type="submit" class="btn btn-lg btn-primary btn-block">Reservar Habitacion</button>
+				<button type="submit" class="btn btn-lg btn-primary btn-block">Reservar
+					Habitacion</button>
 			</div>
 		</form>
-	
+
 	</div>
 </body>
 </html>

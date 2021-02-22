@@ -11,6 +11,7 @@ public interface IUsuarioService {
 	public List<Usuario> listarUsu();
 	public Usuario FindById(Long id);
 	public void eliminarUsuario(Long id);
+	public Usuario modUsuario (Usuario usuario);
 	
 		
 }

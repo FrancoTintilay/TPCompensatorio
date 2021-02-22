@@ -21,28 +21,31 @@
 </head>
 <body>
 <div class = "container">
-	<form>
+	<form th:action="@{/guardarhabitacion}" th:object=${habitacionnuevo} method="Post">
 	<h2>Nueva Habitación</h2>
 	  		<div>
+	  			<h6>Numero de Habitacion</h3>
 				<input type="text" class="form-control" name="numero"
-					placeholder="Numero de Habitacion" required="required">
+					placeholder="Numero de Habitacion" required="required" th:field = "*{numhab}">
 			</div>
 			<div>
+				<h6>Descripcion</h3>
 				<input type="text" class="form-control" name="descripcion"
-					placeholder="Descripción" required="required">
+					placeholder="Descripción" required="required" th:field =  "*{descripcion}">
 			</div>
 			<div>
+				<h6>Precio</h6>
 				<input type="text" class="form-control" name="Costo"
-					placeholder="Costo" required="required">
+					placeholder="Costo" required="required" th:field =  "*{precio}">
 			</div>
 			
 			<div class="form-group">
-						<label for="tipo">Tipo</label> <br> <select>
-						<option>Simple</option>
-						<option>Doble</option>
+						<label for="tipo">Tipo</label> <br> <select th:field="*{tipo}">
+						<option th:value="'Simple'" th:text="Simple"></option>
+						<option th:value="'doble'" th:text="Doble"></option>
 						</select>
 					</div>
-			<button type="submit" class="btn btn-primary">Guardar Habitación</button>
+			<button type="submit" class="btn btn-primary" >Guardar Habitación</button>
 </form>
 </div>
 </body>

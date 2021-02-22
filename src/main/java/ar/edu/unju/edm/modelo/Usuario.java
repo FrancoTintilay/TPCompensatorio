@@ -8,7 +8,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-import org.hibernate.annotations.GenericGenerator;
 import org.springframework.stereotype.Component;
 @Component
 @Entity
@@ -18,99 +17,92 @@ public class Usuario implements Serializable{
 	 */
 	private static final long serialVersionUID= 1L;
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO,generator="native")
-	@GenericGenerator(name="native",strategy="native")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	@Column
 	String nombreUsuario;
 	@Column
-	String contraseña;
+	String password;
 	@Column
 	int dni;
 	@Column
 	String nombre;
 	@Column
 	String apellido;
+	@Column
+	String tipo;
 	public Usuario() {
 		
 	}
-	public Usuario(Long id, String nombreUsuario, String contraseña, int dni, String nombre, String apellido) {
+	public Usuario(Long id, String nombreUsuario, String password, int dni, String nombre, String apellido,
+			String tipo) {
 		super();
 		this.id = id;
 		this.nombreUsuario = nombreUsuario;
-		this.contraseña = contraseña;
+		this.password = password;
 		this.dni = dni;
 		this.nombre = nombre;
 		this.apellido = apellido;
+		this.tipo = tipo;
 	}
-
 	public Long getId() {
 		return id;
 	}
-
 	public void setId(Long id) {
 		this.id = id;
 	}
-
 	public String getNombreUsuario() {
 		return nombreUsuario;
 	}
-
 	public void setNombreUsuario(String nombreUsuario) {
 		this.nombreUsuario = nombreUsuario;
 	}
-
-	public String getContraseña() {
-		return contraseña;
+	public String getPassword() {
+		return password;
 	}
-
-	public void setContraseña(String contraseña) {
-		this.contraseña = contraseña;
+	public void setPassword(String password) {
+		this.password = password;
 	}
-
 	public int getDni() {
 		return dni;
 	}
-
 	public void setDni(int dni) {
 		this.dni = dni;
 	}
-
 	public String getNombre() {
 		return nombre;
 	}
-
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-
 	public String getApellido() {
 		return apellido;
 	}
-
 	public void setApellido(String apellido) {
 		this.apellido = apellido;
 	}
-
-	@Override
-	public String toString() {
-		return "Usuario [id=" + id + ", nombreUsuario=" + nombreUsuario + ", contraseña=" + contraseña + ", dni=" + dni
-				+ ", nombre=" + nombre + ", apellido=" + apellido + "]";
+	public String getTipo() {
+		return tipo;
 	}
-
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((apellido == null) ? 0 : apellido.hashCode());
-		result = prime * result + ((contraseña == null) ? 0 : contraseña.hashCode());
 		result = prime * result + dni;
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
 		result = prime * result + ((nombreUsuario == null) ? 0 : nombreUsuario.hashCode());
+		result = prime * result + ((password == null) ? 0 : password.hashCode());
+		result = prime * result + ((tipo == null) ? 0 : tipo.hashCode());
 		return result;
 	}
-
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -124,11 +116,6 @@ public class Usuario implements Serializable{
 			if (other.apellido != null)
 				return false;
 		} else if (!apellido.equals(other.apellido))
-			return false;
-		if (contraseña == null) {
-			if (other.contraseña != null)
-				return false;
-		} else if (!contraseña.equals(other.contraseña))
 			return false;
 		if (dni != other.dni)
 			return false;
@@ -147,7 +134,23 @@ public class Usuario implements Serializable{
 				return false;
 		} else if (!nombreUsuario.equals(other.nombreUsuario))
 			return false;
+		if (password == null) {
+			if (other.password != null)
+				return false;
+		} else if (!password.equals(other.password))
+			return false;
+		if (tipo == null) {
+			if (other.tipo != null)
+				return false;
+		} else if (!tipo.equals(other.tipo))
+			return false;
 		return true;
 	}
+	@Override
+	public String toString() {
+		return "Usuario [id=" + id + ", nombreUsuario=" + nombreUsuario + ", password=" + password + ", dni=" + dni
+				+ ", nombre=" + nombre + ", apellido=" + apellido + ", tipo=" + tipo + "]";
+	}
+	
 	
 }
